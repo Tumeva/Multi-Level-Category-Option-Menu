@@ -15,7 +15,7 @@
         }
         return $a;
     }
-    public function listCategory($f, $c_id = 0, $s=0){
+    public function listCategory($f, $c_id = 0, $s = 0){
         foreach ($f as $c){
             echo "<option value=\"" . $c['id'] . "\"";
             if($s)
