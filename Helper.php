@@ -15,16 +15,17 @@
         }
         return $a;
     }
-    public function listCategory($f, $c_id = 0, $s = 0){
-        foreach ($f as $c){
+
+    public function listCategory($f, $c_id = 0, $s = 0)
+    {
+        foreach ($f as $c) {
             echo "<option value=\"" . $c['id'] . "\"";
-            if($s)
-            foreach($s as $value)
-            {
-                if ($c['id'] == $value) {
-                    echo " selected";
+            if ($s)
+                foreach ($s as $value) {
+                    if ($c['id'] == $value) {
+                        echo " selected";
+                    }
                 }
-            }
             echo ">";
             for ($i = 0; $i < $c_id; $i++) {
                 echo " - ";
@@ -34,7 +35,8 @@
             if ($c['sub'] == null) {
                 $c_id = 0;
             }
-           $this->listCategory($c['sub'],$c_id+ 1,$s);
+            $this->listCategory($c['sub'], $c_id + 1, $s);
         }
     }
+
 ?>
